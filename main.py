@@ -8,7 +8,7 @@ app = Flask(__name__)
 def index():
     return jsonify({"Choo Choo": "Welcome to your Flask app 🚅"})
 
-@app.route('/webhook')
+@app.route('/webhook', methods=["GET", "POST"])
 def webhook():
     print("webhook was hitted!")
     return jsonify({"message": "webhook was hitted"})
